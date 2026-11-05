@@ -1,0 +1,26 @@
+@api = http://localhost:5081
+
+### 1. GET Root Endpoint
+GET {{api}}/
+
+### 2. GET Hello - Tiếng Anh
+GET {{api}}/hello/An?language=en
+
+### 3. GET Hello - Tiếng Nhật (Bước 8.5)
+GET {{api}}/hello/An?language=ja
+
+### 4. POST Greetings hợp lệ (Trả 201 Created)
+POST {{api}}/greetings
+Content-Type: application/json
+
+{
+  "name": "Binh"
+}
+
+### 5. POST Greetings lỗi tên rỗng (Trả 400 Bad Request)
+POST {{api}}/greetings
+Content-Type: application/json
+
+{
+  "name": ""
+}
